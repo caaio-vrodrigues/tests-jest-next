@@ -5,12 +5,17 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleNameMapper: {
-    '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/app/(.*)$': '<rootDir>/app/$1',
+  testEnvironmentOptions: {
+    customExportConditions: [''],
   },
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jsdom',
+  preset: 'ts-jest',
+  setupFiles: ['./jest.polyfills.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  // moduleNameMapper: {
+  //   '^@/components/(.*)$': '<rootDir>/components/$1',
+  //   '^@/app/(.*)$': '<rootDir>/app/$1',
+  // },
 };
 
 module.exports = createJestConfig(customJestConfig);

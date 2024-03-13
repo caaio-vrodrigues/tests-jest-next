@@ -16,7 +16,9 @@ npm i --save-dev @types/jest
 
 ---
 
-3 Criar o arquivo jest.config.js e jest.setup.js como no exemplo deste projeto, com as devidas alterações.
+3 Criar os arquivos 'jest.config.js', 'jest.setup.js' e 'jest.polyfills.js' como no exemplo deste projeto, com as devidas alterações.
+
+* o arquivo jest.polyfills.js é uma solução de erro que possívelmente pode ser descartado conforme atualizações.
 
 ---
 
@@ -37,4 +39,5 @@ npm i -D eslint-plugin-jest-dom eslint-plugin-testing-library
 X Caso seja exibido o erro: 
 "Error: Uncaught [TypeError: (0 , _reactdom.preload) is not a function]" when running jest
 
-Alterar a versão para 13.4.10 em package.json rodando o comando: npm i next@13.4.10
+Alterar a versão para 13.4.10 em package.json rodando o comando: npm i next@13.4.10 
+actual version: "14.1.3"
