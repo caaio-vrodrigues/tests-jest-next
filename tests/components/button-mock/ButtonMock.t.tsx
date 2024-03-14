@@ -9,7 +9,7 @@ const mockFunc = jest.fn();
 describe('ButtonMock Component', () => {
   it('Should call function on click', () => {
     render(<ButtonMock onClick={mockFunc}/>);
-
+    
     const button = screen.getByRole('button');
     fireEvent.click(button);
 
