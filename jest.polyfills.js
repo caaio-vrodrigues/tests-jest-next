@@ -1,13 +1,17 @@
-const { TextDecoder, TextEncoder, ReadableStream } = require('node:util')
+const { TextDecoder, TextEncoder, ReadableStream } = require('node:util');
+const { clearImmediate } = require('node:timers');
+const { performance } = require('node:perf_hooks');
  
 Object.defineProperties(globalThis, {
   TextDecoder: { value: TextDecoder },
   TextEncoder: { value: TextEncoder },
   ReadableStream: { value: ReadableStream },
-})
+  performance: { value: performance },
+  clearImmediate: { value: clearImmediate},
+});
  
-const { Blob, File } = require('node:buffer')
-const { fetch, Headers, FormData, Request, Response } = require('undici')
+const { Blob, File } = require('node:buffer');
+const { fetch, Headers, FormData, Request, Response } = require('undici');
  
 Object.defineProperties(globalThis, {
   fetch: { value: fetch, writable: true },

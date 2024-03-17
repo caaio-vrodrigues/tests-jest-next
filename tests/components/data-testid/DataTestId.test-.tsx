@@ -9,7 +9,6 @@ describe('GetByTestId Component', () => {
     render(<DataTestId/>);
 
     const article = screen.getByTestId('article-test');
-
     expect(article).toBeInTheDocument();
   });
 });

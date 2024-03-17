@@ -11,7 +11,6 @@ describe('List Component', () => {
     render(<List lis={mockListItems}/>);
 
     const items = screen.getAllByRole('listitem');
-
     expect(items.length).toBe(3);
   });
 
@@ -19,9 +18,9 @@ describe('List Component', () => {
     render(<List lis={mockListItems}/>);
 
     const items = screen.getAllByRole('listitem');
-    const firstItem = screen.getAllByRole('listitem')[0];
-
     expect(items[2]).toHaveTextContent('item-C');
+
+    const firstItem = screen.getAllByRole('listitem')[0];
     expect(firstItem).toHaveTextContent('item-A');
   });
 });

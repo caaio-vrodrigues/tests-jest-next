@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // components 
 import { ButtonMock } from "@/components/button-mock/ButtonMock";
@@ -10,10 +10,21 @@ import { Form } from "@/components/form/Form";
 import { Checkbox } from "@/components/checkbox/Checkbox";
 import { AsyncAwait } from "@/components/async-await/AsyncAwait";
 
+import fetchAPI from "@/funcs/fetchAPI";
+
 export default function Home() {
   const [showText, setShowText] = useState<boolean>(false);
 
   const lis = ['item 1', 'item 2', 'item 3', 'item 4'];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchAPI();
+      console.log(await data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main className={`flex flex-col justify-center items-center p-5`}>
